@@ -1,0 +1,1 @@
+This project is in my repository to practice learning flask.
