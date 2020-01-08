@@ -54,3 +54,23 @@ def htmlpage():
 def hello(name):
     print("Will we see this?")
     return "Hello, " + name + "!"
+
+# HTML Forms Exercise
+
+@app.route('/my-first-form')
+def my_first_form():
+    return render_template('my-first-form.html')
+
+@app.route('/make-greeting', methods=['POST'])
+def handle_form_submission():
+    name = request.form['name']
+    title = request.form['title']
+
+    greeting = 'Hello, '
+
+    if title != '':
+        greeting += title + ' '
+
+    greeting += name + '!'
+
+    return render_template('greeting-result.html', greeting=greeting)
